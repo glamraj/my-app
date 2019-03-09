@@ -8,6 +8,11 @@ RUN ["java", "-version"]
 RUN apk update
 RUN apk add maven
 
+# set the environment variables
+ENV JDK_HOME /usr/lib/jvm/java-1.8-openjdk/
+ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/
+ENV PATH $PATH:$JAVA_HOME/bin
+
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
 
