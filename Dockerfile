@@ -6,7 +6,7 @@ RUN ["java", "-version"]
 
 #Install maven
 RUN apk update
-RUN apk install -y maven
+RUN apk install maven
 
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
