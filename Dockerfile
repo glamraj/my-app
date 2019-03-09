@@ -6,12 +6,7 @@ RUN ["java", "-version"]
 
 #Install maven
 RUN apk update
-RUN apk add maven
-
-# set the environment variables
-ENV JDK_HOME /usr/lib/jvm/java-1.8-openjdk/
-ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/
-ENV PATH $PATH:$JAVA_HOME/bin
+RUN apk add maven openjdk-8-jdk
 
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
@@ -24,7 +19,7 @@ ADD pom.xml /code/pom.xml
 
 #Build the code
 RUN ["mvn", "clean"]
-RUN ["mvn", "package"]
+RUN ["mvn", "install"]
 
 #Optional you can include commands to run test cases.
 
