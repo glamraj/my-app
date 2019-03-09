@@ -5,7 +5,7 @@ FROM maven:3.3-jdk-8
 RUN ["java", "-version"]
 
 #Install maven
-RUN apk update
+RUN apt-get update
 
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
