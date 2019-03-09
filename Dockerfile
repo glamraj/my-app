@@ -11,10 +11,10 @@ RUN apk update maven
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
 
-#Copy the SRC, LIB and pom.xml to WORKDIR
-ADD pom.xml /code/pom.xml
 #ADD lib /code/lib
 ADD src /code/src
+#Copy the SRC, LIB and pom.xml to WORKDIR
+ADD pom.xml /code/pom.xml
 
 #Build the code
 RUN ["mvn", "clean"]
