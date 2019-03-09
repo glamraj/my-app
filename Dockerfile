@@ -12,6 +12,7 @@ RUN apk update maven
 WORKDIR /code
 
 #ADD lib /code/lib
+ADD Dockerfile /code/
 ADD src /code/src
 #Copy the SRC, LIB and pom.xml to WORKDIR
 ADD pom.xml /code/pom.xml
