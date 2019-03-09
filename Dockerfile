@@ -7,7 +7,10 @@ RUN ["java", "-version"]
 #Install maven
 RUN apk update
 RUN apk add maven
-RUN apk add java-1.8-openjdk
+
+# Set environment
+ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/
+ENV PATH ${PATH}:${JAVA_HOME}/bin
 
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
