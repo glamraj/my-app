@@ -8,14 +8,6 @@ RUN ["java", "-version"]
 RUN apk update
 RUN apk add maven
 
-#Set $JAVA_HOME
-RUN echo $PATH
-RUN echo $JAVA_HOME
-RUN JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
-RUN export $JAVA_HOME
-RUN PATH=$PATH:$JAVA_HOME
-RUN echo $PATH $$JAVA_HOME
-
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
 
@@ -27,7 +19,7 @@ ADD pom.xml /code/pom.xml
 
 #Build the code
 RUN ["mvn", "clean"]
-RUN ["mvn", "install"]
+RUN ["mvn", "package"]
 
 #Optional you can include commands to run test cases.
 
