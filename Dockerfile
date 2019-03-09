@@ -9,7 +9,11 @@ RUN apk update
 RUN apk add maven
 
 #Set $JAVA_HOME
+RUN echo $PATH
+RUN echo $JAVA_HOME
 RUN export $JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk/bin
+RUN echo $JAVA_HOME
+RUN echo $PATH
 
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
