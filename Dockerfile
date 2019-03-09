@@ -4,8 +4,9 @@ FROM maven:3.3-jdk-8
 #Check the java version
 RUN ["java", "-version"]
 
-#Install maven
-RUN apt-get update
+RUN echo $JAVA_HOME
+RUN echo $PATH
+RUN mvn -v
 
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
