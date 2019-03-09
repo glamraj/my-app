@@ -1,19 +1,11 @@
 #Docker base image : Alpine Linux with OpenJDK JRE
-FROM openjdk:8-jre-alpine
+FROM maven:3.3-jdk-8
 
 #Check the java version
 RUN ["java", "-version"]
 
 #Install maven
 RUN apk update
-RUN apk add maven
-
-# Set environment
-ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/
-ENV PATH ${PATH}:${JAVA_HOME}/bin
-
-RUN echo $JAVA_HOME
-RUN echo $PATH
 
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
