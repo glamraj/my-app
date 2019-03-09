@@ -6,7 +6,8 @@ RUN ["java", "-version"]
 
 #Install maven
 RUN apk update
-RUN apk add maven openjdk-8-jdk
+RUN apk add maven
+RUN apk add openjdk-8-jdk
 
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
