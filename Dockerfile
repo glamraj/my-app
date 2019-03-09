@@ -4,10 +4,6 @@ FROM maven:3.3-jdk-8
 #Check the java version
 RUN ["java", "-version"]
 
-RUN echo $JAVA_HOME
-RUN echo $PATH
-RUN mvn -v
-
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
 
@@ -27,4 +23,4 @@ RUN ["mvn", "install"]
 EXPOSE 8081
 
 #CMD to be executed when docker is run.
-ENTRYPOINT ["java","-jar","target/recruitment-service-0.0.1.jar"]
+ENTRYPOINT ["java","-jar","target/my-app-1.0-SNAPSHOT.jar"]
